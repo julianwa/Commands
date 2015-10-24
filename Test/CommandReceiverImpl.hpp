@@ -8,8 +8,9 @@
 
 #pragma once
 
-///////////////////////////////////
-
+// This class is used to recursively expand the command types list and instantiate
+// any necessary template functions in order to satisfy the linker. By simply referring
+// to the function pointers, the template functions will be instantiated.
 template <typename CommandReceiverT, typename Commands>
 struct InstantiateReceiverMethods;
 
@@ -31,8 +32,10 @@ struct InstantiateReceiverMethods<CommandReceiverT, std::tuple<First, Others...>
     InstantiateReceiverMethods<CommandReceiverT, std::tuple<Others...>> Next;
 };
 
-///////////////////////////////////
-
+// This class is used to recursively expand the command types list and attempt to dynamic_cast
+// the generic command to each type. Rather than execute the command upon finding a match, we
+// return a lambda so that the call stack of the command handler does not contain the command
+// types list expansion.
 template <typename T, typename Commands>
 struct PossiblyExecute;
 
@@ -67,7 +70,9 @@ struct PossiblyExecute<T, std::tuple<First, Others...>>
     PossiblyExecute<T, std::tuple<Others...>> Next;
 };
 
-///////////////////////////////////
+
+// This macro needs to be included for every impl. It instantiates any template methods and
+// provides the glue that binds the Execute template methods with the impl's Handle methods.
 
 #define COMMAND_RECEIVER_IMPL(T)                                                            \
 InstantiateReceiverMethods<T, T::Commands> sInstantiateReceiverMethods;                     \
