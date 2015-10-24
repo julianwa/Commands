@@ -27,7 +27,7 @@ int main(int argc, const char * argv[])
     receiver->Execute(make_shared<CommandC>());
     
     auto genericReceiver = GenericCommandReceiver(receiver);
-    genericReceiver(make_shared<CommandA>());
+    genericReceiver.Execute(make_shared<CommandA>());
     
     return 0;
 }
