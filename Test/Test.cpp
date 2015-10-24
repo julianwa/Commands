@@ -12,6 +12,8 @@
 #include "Test.h"
 #include "CommandReceiverImpl.hpp"
 
+#define PRINT() printf("%s\n", __PRETTY_FUNCTION__)
+
 struct CommandReceiverAImpl : public CommandReceiverA
 {
     void Handle(const shared_ptr<CommandA> &command)

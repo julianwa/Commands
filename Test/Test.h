@@ -14,15 +14,10 @@
 
 using namespace std;
 
-#define PRINT() printf("%s\n", __PRETTY_FUNCTION__)
-
-
 struct CommandA : public Command {};
 struct CommandB : public Command {};
 struct CommandC : public Command {};
 struct CommandD : public Command {};
-
-
 
 struct CommandReceiverA : public CommandReceiverT<CommandReceiverA>
 {
