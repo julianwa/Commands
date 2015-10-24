@@ -24,6 +24,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EE1DFA541BDBC7E1005C452F /* CommandReceiver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommandReceiver.h; sourceTree = "<group>"; };
+		EE1DFA551BDBC80A005C452F /* Command.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Command.h; sourceTree = "<group>"; };
+		EE1DFA571BDBC8C3005C452F /* CommandReceiverImpl.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = CommandReceiverImpl.hpp; path = /Users/julianwalker/Desktop/Test/Test/CommandReceiverImpl.hpp; sourceTree = "<absolute>"; };
 		EE9784B61BDB212A00CD1F54 /* Test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Test; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE9784B91BDB212A00CD1F54 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		EE9784C01BDB2CF100CD1F54 /* Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Test.cpp; sourceTree = "<group>"; };
@@ -41,6 +44,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EE1DFA561BDBC893005C452F /* Commands */ = {
+			isa = PBXGroup;
+			children = (
+				EE1DFA551BDBC80A005C452F /* Command.h */,
+				EE1DFA541BDBC7E1005C452F /* CommandReceiver.h */,
+				EE1DFA571BDBC8C3005C452F /* CommandReceiverImpl.hpp */,
+			);
+			name = Commands;
+			sourceTree = "<group>";
+		};
 		EE9784AD1BDB212900CD1F54 = {
 			isa = PBXGroup;
 			children = (
@@ -60,9 +73,10 @@
 		EE9784B81BDB212A00CD1F54 /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				EE9784C21BDB2CF700CD1F54 /* Test.h */,
-				EE9784C01BDB2CF100CD1F54 /* Test.cpp */,
+				EE1DFA561BDBC893005C452F /* Commands */,
 				EE9784B91BDB212A00CD1F54 /* main.cpp */,
+				EE9784C01BDB2CF100CD1F54 /* Test.cpp */,
+				EE9784C21BDB2CF700CD1F54 /* Test.h */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -243,6 +257,7 @@
 				EE9784BF1BDB212A00CD1F54 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
