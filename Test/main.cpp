@@ -17,7 +17,7 @@ int main(int argc, const char * argv[])
     
     auto commands = vector<shared_ptr<Command>> {
         make_shared<CommandA>(),
-        make_shared<CommandB>()
+        make_shared<CommandB>(),
     };
     
     for (auto command : commands) {

@@ -6,6 +6,7 @@
 //
 //
 
+#include <assert.h>
 #include <typeinfo>
 #include <iostream>
 #include "Test.h"
@@ -70,23 +71,29 @@ struct PossiblyExecute;
 template<typename T>
 struct PossiblyExecute<T, std::tuple<>>
 {
-    void operator()(const CommandReceiverT<T> *receiver,
-                    const shared_ptr<Command> &command)
+    std::function<void(void)> operator()(const T *receiver,
+                                         const shared_ptr<Command> &command)
     {
+        return [] {
+            printf("Command not supported\n");
+            assert(0);
+        };
     }
 };
 
 template <typename T, typename First, typename ... Others>
 struct PossiblyExecute<T, std::tuple<First, Others...>>
 {
-    void operator()(CommandReceiverT<T> *receiver,
-                    const shared_ptr<Command> &command)
+    std::function<void(void)> operator()(T *receiver,
+                                         const shared_ptr<Command> &command)
     {
         auto castCommand = dynamic_pointer_cast<First>(command);
         if (castCommand) {
-            receiver->Execute(castCommand);
+            return [receiver, castCommand] {
+                receiver->Handle(castCommand);
+            };
         } else {
-            Next(receiver, command);
+            return Next(receiver, command);
         }
     }
     PossiblyExecute<T, std::tuple<Others...>> Next;
@@ -97,5 +104,5 @@ template<>
 template<>
 void CommandReceiverT<CommandReceiverA>::_Execute(const shared_ptr<Command> &command)
 {
-    PossiblyExecute<CommandReceiverA, CommandReceiverA::Commands>()(this, command);
+    PossiblyExecute<CommandReceiverImplA, CommandReceiverA::Commands>()(static_cast<CommandReceiverImplA *>(this), command)();
 }
