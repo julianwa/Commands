@@ -14,6 +14,11 @@ using namespace std;
 
 #define PRINT() printf("%s\n", __PRETTY_FUNCTION__)
 
+struct Command {
+    // Adding a virtual destructor will make the Command type polymorphic
+    virtual ~Command() {}
+};
+
 ///////////////////////////////////
 
 template <typename Type, typename Collection>
@@ -31,6 +36,12 @@ struct contains<Type, std::tuple<Type, Others...>>
     typedef std::true_type result;
 };
 
+template <typename First, typename ... Others>
+struct contains<Command, std::tuple<First, Others...>>
+{
+    typedef std::true_type result;
+};
+
 template <typename Type, typename First, typename ... Others>
 struct contains<Type, std::tuple<First, Others...>>
 {
@@ -39,11 +50,17 @@ struct contains<Type, std::tuple<First, Others...>>
 
 ///////////////////////////////////
 
-struct CommandA {};
-struct CommandB {};
+struct CommandA : public Command {};
+struct CommandB : public Command {};
+struct CommandC : public Command {};
+
+struct CommandReceiver
+{
+    virtual void Execute(const std::shared_ptr<Command> &command) = 0;
+};
 
 template<typename DerivedT>
-struct CommandReceiver
+struct CommandReceiverT
 {
     template<typename CommandT>
     void Execute(const std::shared_ptr<CommandT> &command)
@@ -59,9 +76,9 @@ private:
     void _Execute(const std::shared_ptr<CommandT> &);
 };
 
-struct CommandReceiverA : public CommandReceiver<CommandReceiverA>
+struct CommandReceiverA : public CommandReceiverT<CommandReceiverA>
 {
-    using Commands = std::tuple<CommandA, CommandB>;
+    using Commands = std::tuple<CommandA, CommandB, CommandC>;
     
     static shared_ptr<CommandReceiverA> New();
 };

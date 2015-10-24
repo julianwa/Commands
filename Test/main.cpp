@@ -7,10 +7,24 @@
 //
 
 #include "Test.h"
+#include <vector>
+
+using namespace std;
 
 int main(int argc, const char * argv[])
 {
-    CommandReceiverA::New()->Execute(make_shared<CommandA>());
-    CommandReceiverA::New()->Execute(make_shared<CommandB>());
+    auto receiver = CommandReceiverA::New();
+    
+    auto commands = vector<shared_ptr<Command>> {
+        make_shared<CommandA>(),
+        make_shared<CommandB>()
+    };
+    
+    for (auto command : commands) {
+        receiver->Execute(command);
+    }
+    
+    receiver->Execute(make_shared<CommandC>());
+    
     return 0;
 }
