@@ -9,6 +9,7 @@
 #pragma once
 
 #include <memory>
+#include <functional>
 
 using namespace std;
 
@@ -53,6 +54,7 @@ struct contains<Type, std::tuple<First, Others...>>
 struct CommandA : public Command {};
 struct CommandB : public Command {};
 struct CommandC : public Command {};
+struct CommandD : public Command {};
 
 struct CommandReceiver
 {
@@ -75,6 +77,32 @@ private:
     template<typename CommandT>
     void _Execute(const std::shared_ptr<CommandT> &);
 };
+
+class GenericCommandReceiver
+{
+public:
+    template<class ReceiverT>
+    GenericCommandReceiver(const shared_ptr<ReceiverT> &receiver)
+    {
+        _F = [receiver](const std::shared_ptr<Command> &command) {
+            receiver->Execute(command);
+        };
+    }
+    
+    void operator()(const shared_ptr<Command> &command)
+    {
+        _F(command);
+    }
+private:
+    std::function<void(const shared_ptr<Command> &command)> _F;
+};
+//template<typename CommandReceiverT, typename CommandT>
+//std::function<void(const std::shared_ptr<CommandT> &command)> ExecutePromise(const std::shared_ptr<CommandReceiverT> &receiver)
+//{
+//    return [receiver](const shared_ptr<CommandT> &command) {
+//        receiver->Execute(command);
+//    };
+//}
 
 struct CommandReceiverA : public CommandReceiverT<CommandReceiverA>
 {
