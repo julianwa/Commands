@@ -44,7 +44,7 @@ int main(int argc, const char * argv[])
     opaqueReceiver.Execute(make_shared<CommandA>());
 
     // 5) Lastly, you can, without too much hassle, wrap up an object that doesn't derive
-    //    from Command and treat it as if it does.
+    //    from Command and treat it as a commmand.
     auto command = Commandifier<NoBaseClassCommand>::New(NoBaseClassCommand());
     receiver->Execute(command);
     receiver->Execute(dynamic_pointer_cast<Command>(command));
