@@ -65,7 +65,7 @@ struct PossiblyExecute<T, std::tuple<First, Others...>>
         auto castCommand = std::dynamic_pointer_cast<First>(command);
         if (castCommand) {
             return [receiver, castCommand] {
-                receiver->Handle(castCommand);
+                receiver->Execute(castCommand);
             };
         } else {
             return Next(receiver, command);
@@ -76,7 +76,7 @@ struct PossiblyExecute<T, std::tuple<First, Others...>>
 
 
 // This macro needs to be included for every impl. It instantiates any template methods and
-// provides the glue that binds the Execute template methods with the impl's Handle methods.
+// provides the glue that binds the Execute template methods with the impl's Execute methods.
 
 #define COMMAND_RECEIVER_IMPL(T)                                                            \
 InstantiateReceiverMethods<T, T::Commands> sInstantiateReceiverMethods;                     \
@@ -85,7 +85,7 @@ template<>                                                                      
 template<class CommandT>                                                                    \
 void CommandReceiverT<T>::_Execute(const shared_ptr<CommandT> &command)                     \
 {                                                                                           \
-    static_cast<T##Impl *>(this)->Handle(command);                                          \
+    static_cast<T##Impl *>(this)->Execute(command);                                         \
 }                                                                                           \
                                                                                             \
 template<>                                                                                  \

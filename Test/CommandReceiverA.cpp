@@ -17,30 +17,30 @@ using namespace std;
 
 struct CommandReceiverAImpl : public CommandReceiverA
 {
-    void Handle(const shared_ptr<CommandA> &command)
+    void Execute(const shared_ptr<CommandA> &command)
     {
         PRINT();
     }
     
-    void Handle(const shared_ptr<CommandB> &command)
+    void Execute(const shared_ptr<CommandB> &command)
     {
         PRINT();
     }
     
-    void Handle(const shared_ptr<CommandC> &command)
+    void Execute(const shared_ptr<CommandC> &command)
     {
         PRINT();
     }
     
-    void Handle(const NoBaseClassCommand &command)
+    void Execute(const NoBaseClassCommand &command)
     {
         PRINT();
     }
     
     template<class T>
-    void Handle(const shared_ptr<Commandifier<T>> &command)
+    void Execute(const shared_ptr<Commandifier<T>> &command)
     {
-        Handle(command->Payload);
+        Execute(command->Payload);
     }
 };
 
