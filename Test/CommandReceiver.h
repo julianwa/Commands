@@ -71,11 +71,11 @@ private:
 
 // This class can be used to abstract away a given command receiver so that
 // the party executing the command doesn't need to know the receiver's type.
-class GenericCommandReceiver
+class OpaqueCommandReceiver
 {
 public:
     template<class ReceiverT>
-    GenericCommandReceiver(const std::shared_ptr<ReceiverT> &receiver)
+    OpaqueCommandReceiver(const std::shared_ptr<ReceiverT> &receiver)
     {
         _Execute = [receiver](const std::shared_ptr<Command> &command) {
             receiver->Execute(command);
