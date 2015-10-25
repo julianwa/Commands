@@ -14,6 +14,7 @@ struct Command
     virtual ~Command() {}
 };
 
+// Used to turn any object into a Command
 template <class T>
 struct Commandifier : public Command
 {
