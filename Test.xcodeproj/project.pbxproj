@@ -24,10 +24,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		EE1DFA541BDBC7E1005C452F /* CommandReceiver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommandReceiver.h; sourceTree = "<group>"; };
-		EE1DFA551BDBC80A005C452F /* Command.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Command.h; sourceTree = "<group>"; };
+		3C3123E61BDD1DEF007B642C /* Command.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Command.h; path = Lib/Command.h; sourceTree = "<group>"; };
+		3C3123E71BDD1DEF007B642C /* CommandReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommandReceiver.h; path = Lib/CommandReceiver.h; sourceTree = "<group>"; };
+		3C3123E81BDD1DEF007B642C /* CommandReceiverImpl.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = CommandReceiverImpl.hpp; path = Lib/CommandReceiverImpl.hpp; sourceTree = "<group>"; };
 		EE1DFA581BDC5509005C452F /* Commands.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Commands.h; sourceTree = "<group>"; };
-		EE8D86F81BDD09A50097AC35 /* CommandReceiverImpl.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CommandReceiverImpl.hpp; sourceTree = "<group>"; };
 		EE9784B61BDB212A00CD1F54 /* Test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Test; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE9784B91BDB212A00CD1F54 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		EE9784C01BDB2CF100CD1F54 /* CommandReceiverA.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CommandReceiverA.cpp; sourceTree = "<group>"; };
@@ -45,14 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EE1DFA561BDBC893005C452F /* Command */ = {
+		3C3123E51BDD1DD6007B642C /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				EE1DFA551BDBC80A005C452F /* Command.h */,
-				EE1DFA541BDBC7E1005C452F /* CommandReceiver.h */,
-				EE8D86F81BDD09A50097AC35 /* CommandReceiverImpl.hpp */,
+				3C3123E61BDD1DEF007B642C /* Command.h */,
+				3C3123E71BDD1DEF007B642C /* CommandReceiver.h */,
+				3C3123E81BDD1DEF007B642C /* CommandReceiverImpl.hpp */,
 			);
-			name = Command;
+			name = Lib;
 			sourceTree = "<group>";
 		};
 		EE1DFA5A1BDC5536005C452F /* Sample */ = {
@@ -84,7 +84,7 @@
 		EE9784B81BDB212A00CD1F54 /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				EE1DFA561BDBC893005C452F /* Command */,
+				3C3123E51BDD1DD6007B642C /* Lib */,
 				EE9784B91BDB212A00CD1F54 /* main.cpp */,
 				EE1DFA5A1BDC5536005C452F /* Sample */,
 			);
@@ -190,7 +190,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -226,7 +226,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 			};
