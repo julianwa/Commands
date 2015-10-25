@@ -9,8 +9,9 @@
 #include <assert.h>
 #include <typeinfo>
 #include <iostream>
-#include "Test.h"
+#include "CommandReceiverA.h"
 #include "CommandReceiverImpl.hpp"
+#include "Commands.h"
 
 #define PRINT() printf("%s\n", __PRETTY_FUNCTION__)
 

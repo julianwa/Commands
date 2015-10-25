@@ -6,7 +6,8 @@
 //  Copyright (c) 2015 Julian Walker. All rights reserved.
 //
 
-#include "Test.h"
+#include "CommandReceiverA.h"
+#include "Commands.h"
 #include <vector>
 
 using namespace std;

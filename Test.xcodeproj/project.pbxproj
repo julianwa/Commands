@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EE9784BA1BDB212A00CD1F54 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE9784B91BDB212A00CD1F54 /* main.cpp */; };
-		EE9784C11BDB2CF100CD1F54 /* Test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE9784C01BDB2CF100CD1F54 /* Test.cpp */; };
+		EE9784C11BDB2CF100CD1F54 /* CommandReceiverA.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE9784C01BDB2CF100CD1F54 /* CommandReceiverA.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,10 +27,11 @@
 		EE1DFA541BDBC7E1005C452F /* CommandReceiver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommandReceiver.h; sourceTree = "<group>"; };
 		EE1DFA551BDBC80A005C452F /* Command.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Command.h; sourceTree = "<group>"; };
 		EE1DFA571BDBC8C3005C452F /* CommandReceiverImpl.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = CommandReceiverImpl.hpp; path = /Users/julianwalker/Desktop/Test/Test/CommandReceiverImpl.hpp; sourceTree = "<absolute>"; };
+		EE1DFA581BDC5509005C452F /* Commands.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Commands.h; sourceTree = "<group>"; };
 		EE9784B61BDB212A00CD1F54 /* Test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Test; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE9784B91BDB212A00CD1F54 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		EE9784C01BDB2CF100CD1F54 /* Test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Test.cpp; sourceTree = "<group>"; };
-		EE9784C21BDB2CF700CD1F54 /* Test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
+		EE9784C01BDB2CF100CD1F54 /* CommandReceiverA.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CommandReceiverA.cpp; sourceTree = "<group>"; };
+		EE9784C21BDB2CF700CD1F54 /* CommandReceiverA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommandReceiverA.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,14 +45,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EE1DFA561BDBC893005C452F /* Commands */ = {
+		EE1DFA561BDBC893005C452F /* Command */ = {
 			isa = PBXGroup;
 			children = (
 				EE1DFA551BDBC80A005C452F /* Command.h */,
 				EE1DFA541BDBC7E1005C452F /* CommandReceiver.h */,
 				EE1DFA571BDBC8C3005C452F /* CommandReceiverImpl.hpp */,
 			);
-			name = Commands;
+			name = Command;
+			sourceTree = "<group>";
+		};
+		EE1DFA5A1BDC5536005C452F /* Sample */ = {
+			isa = PBXGroup;
+			children = (
+				EE9784C01BDB2CF100CD1F54 /* CommandReceiverA.cpp */,
+				EE9784C21BDB2CF700CD1F54 /* CommandReceiverA.h */,
+				EE1DFA581BDC5509005C452F /* Commands.h */,
+			);
+			name = Sample;
 			sourceTree = "<group>";
 		};
 		EE9784AD1BDB212900CD1F54 = {
@@ -73,10 +84,9 @@
 		EE9784B81BDB212A00CD1F54 /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				EE1DFA561BDBC893005C452F /* Commands */,
+				EE1DFA561BDBC893005C452F /* Command */,
 				EE9784B91BDB212A00CD1F54 /* main.cpp */,
-				EE9784C01BDB2CF100CD1F54 /* Test.cpp */,
-				EE9784C21BDB2CF700CD1F54 /* Test.h */,
+				EE1DFA5A1BDC5536005C452F /* Sample */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -138,7 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE9784BA1BDB212A00CD1F54 /* main.cpp in Sources */,
-				EE9784C11BDB2CF100CD1F54 /* Test.cpp in Sources */,
+				EE9784C11BDB2CF100CD1F54 /* CommandReceiverA.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
