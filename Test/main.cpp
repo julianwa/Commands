@@ -12,6 +12,10 @@
 
 using namespace std;
 
+struct Payload {
+    int Value;
+};
+
 int main(int argc, const char * argv[])
 {
     auto receiver = CommandReceiverA::New();
@@ -38,6 +42,12 @@ int main(int argc, const char * argv[])
     //    OpaqueCommandReceiver helper.
     auto opaqueReceiver = OpaqueCommandReceiver(receiver);
     opaqueReceiver.Execute(make_shared<CommandA>());
+
+    // 5) Lastly, you can, without too much hassle, wrap up an object that doesn't derive
+    //    from Command and treat it as if it does.
+    auto command = Commandifier<NoBaseClassCommand>::New(NoBaseClassCommand());
+    receiver->Execute(command);
+    receiver->Execute(dynamic_pointer_cast<Command>(command));
     
     return 0;
 }

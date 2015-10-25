@@ -15,6 +15,7 @@
 struct CommandA;
 struct CommandB;
 struct CommandC;
+struct NoBaseClassCommand;
 
 struct CommandReceiverA : public CommandReceiverT<CommandReceiverA>
 {
@@ -22,7 +23,7 @@ struct CommandReceiverA : public CommandReceiverT<CommandReceiverA>
     // typed command against this interface you'll get a static assert in the
     // compilation unit that is invoking the execute. If you try to execute a
     // generic command against this interface you'll get a runtime error / warning.
-    using Commands = std::tuple<CommandA, CommandB, CommandC>;
+    using Commands = std::tuple<CommandA, CommandB, CommandC, Commandifier<NoBaseClassCommand>>;
     
     static std::shared_ptr<CommandReceiverA> New();
 };

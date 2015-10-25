@@ -12,4 +12,5 @@ struct CommandA : public Command {};
 struct CommandB : public Command {};
 struct CommandC : public Command {};
 struct CommandD : public Command {};
+struct NoBaseClassCommand {};
 

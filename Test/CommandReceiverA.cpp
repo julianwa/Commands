@@ -31,6 +31,17 @@ struct CommandReceiverAImpl : public CommandReceiverA
     {
         PRINT();
     }
+    
+    void Handle(const NoBaseClassCommand &command)
+    {
+        PRINT();
+    }
+    
+    template<class T>
+    void Handle(const shared_ptr<Commandifier<T>> &command)
+    {
+        Handle(command->Payload);
+    }
 };
 
 shared_ptr<CommandReceiverA> CommandReceiverA::New()

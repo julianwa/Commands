@@ -13,3 +13,16 @@ struct Command
     // Adding a virtual destructor will make the Command type polymorphic
     virtual ~Command() {}
 };
+
+template <class T>
+struct Commandifier : public Command
+{
+    const T &Payload;
+    Commandifier(const T &payload) : Payload(payload) {}
+    virtual ~Commandifier() {}
+    
+    static std::shared_ptr<Commandifier> New(const T &payload)
+    {
+        return std::make_shared<Commandifier>(payload);
+    }
+};
