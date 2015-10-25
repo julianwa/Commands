@@ -8,6 +8,10 @@
 
 #pragma once
 
+#include <memory>
+#include <functional>
+#include <assert.h>
+
 // This class is used to recursively expand the command types list and instantiate
 // any necessary template functions in order to satisfy the linker. By simply referring
 // to the function pointers, the template functions will be instantiated.

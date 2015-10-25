@@ -6,8 +6,6 @@
 //
 //
 
-#include <assert.h>
-#include <typeinfo>
 #include <iostream>
 #include "CommandReceiverA.h"
 #include "CommandReceiverImpl.hpp"
