@@ -9,10 +9,7 @@
 #pragma once
 
 #include <memory>
-#include <functional>
 #include "CommandReceiver.h"
-
-using namespace std;
 
 // Commands can be forward declared
 struct CommandA;
@@ -27,6 +24,6 @@ struct CommandReceiverA : public CommandReceiverT<CommandReceiverA>
     // generic command against this interface you'll get a runtime error / warning.
     using Commands = std::tuple<CommandA, CommandB, CommandC>;
     
-    static shared_ptr<CommandReceiverA> New();
+    static std::shared_ptr<CommandReceiverA> New();
 };
 

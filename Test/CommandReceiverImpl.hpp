@@ -47,7 +47,7 @@ template<typename T>
 struct PossiblyExecute<T, std::tuple<>>
 {
     std::function<void(void)> operator()(const T *receiver,
-                                         const shared_ptr<Command> &command)
+                                         const std::shared_ptr<Command> &command)
     {
         return [] {
             printf("Command not supported\n");
@@ -60,9 +60,9 @@ template <typename T, typename First, typename ... Others>
 struct PossiblyExecute<T, std::tuple<First, Others...>>
 {
     std::function<void(void)> operator()(T *receiver,
-                                         const shared_ptr<Command> &command)
+                                         const std::shared_ptr<Command> &command)
     {
-        auto castCommand = dynamic_pointer_cast<First>(command);
+        auto castCommand = std::dynamic_pointer_cast<First>(command);
         if (castCommand) {
             return [receiver, castCommand] {
                 receiver->Handle(castCommand);

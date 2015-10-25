@@ -11,6 +11,8 @@
 #include "CommandReceiverImpl.hpp"
 #include "Commands.h"
 
+using namespace std;
+
 #define PRINT() printf("%s\n", __PRETTY_FUNCTION__)
 
 struct CommandReceiverAImpl : public CommandReceiverA
