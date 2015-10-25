@@ -12,10 +12,6 @@
 
 using namespace std;
 
-struct Payload {
-    int Value;
-};
-
 int main(int argc, const char * argv[])
 {
     auto receiver = CommandReceiverA::New();
