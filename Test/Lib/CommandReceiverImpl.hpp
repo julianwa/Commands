@@ -46,12 +46,11 @@ struct PossiblyExecute;
 template<typename T>
 struct PossiblyExecute<T, std::tuple<>>
 {
-    std::function<void(void)> operator()(const T *receiver,
+    std::function<bool(void)> operator()(const T *receiver,
                                          const std::shared_ptr<Command> &command)
     {
         return [] {
-            printf("Command not supported\n");
-            assert(0);
+            return false;
         };
     }
 };
@@ -59,13 +58,14 @@ struct PossiblyExecute<T, std::tuple<>>
 template <typename T, typename First, typename ... Others>
 struct PossiblyExecute<T, std::tuple<First, Others...>>
 {
-    std::function<void(void)> operator()(T *receiver,
+    std::function<bool(void)> operator()(T *receiver,
                                          const std::shared_ptr<Command> &command)
     {
         auto castCommand = std::dynamic_pointer_cast<First>(command);
         if (castCommand) {
             return [receiver, castCommand] {
                 receiver->Execute(castCommand);
+                return true;
             };
         } else {
             return Next(receiver, command);
@@ -79,18 +79,21 @@ struct PossiblyExecute<T, std::tuple<First, Others...>>
 // provides the glue that binds the Execute template methods with the impl's Execute methods.
 
 #define COMMAND_RECEIVER_IMPL(T)                                                            \
-InstantiateReceiverMethods<T, T::Commands> sInstantiateReceiverMethods;                     \
+namespace {                                                                                 \
+    InstantiateReceiverMethods<T, T::Commands> sInstantiateReceiverMethods;                 \
+}                                                                                           \
                                                                                             \
 template<>                                                                                  \
 template<class CommandT>                                                                    \
-void CommandReceiverT<T>::_Execute(const shared_ptr<CommandT> &command)                     \
+bool CommandReceiverT<T>::_Execute(const shared_ptr<CommandT> &command)                     \
 {                                                                                           \
     static_cast<T##Impl *>(this)->Execute(command);                                         \
+    return true;                                                                            \
 }                                                                                           \
                                                                                             \
 template<>                                                                                  \
 template<>                                                                                  \
-void CommandReceiverT<T>::_Execute(const shared_ptr<Command> &command)                      \
+bool CommandReceiverT<T>::_Execute(const shared_ptr<Command> &command)                      \
 {                                                                                           \
-    PossiblyExecute<T##Impl, T::Commands>()(static_cast<T##Impl *>(this), command)();       \
+    return PossiblyExecute<T##Impl, T::Commands>()(static_cast<T##Impl *>(this), command)();\
 }

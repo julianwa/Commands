@@ -7,76 +7,165 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EE9784BA1BDB212A00CD1F54 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE9784B91BDB212A00CD1F54 /* main.cpp */; };
-		EE9784C11BDB2CF100CD1F54 /* CommandReceiverA.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE9784C01BDB2CF100CD1F54 /* CommandReceiverA.cpp */; };
+		0732AE1019462A90ED8563DD /* libPods-TestGUI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CB5495AE60313500F2F2523F /* libPods-TestGUI.a */; };
+		EED10D101BE53B3D0099A181 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = EED10D0F1BE53B3D0099A181 /* AppDelegate.mm */; };
+		EED10D131BE53B3D0099A181 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EED10D121BE53B3D0099A181 /* main.m */; };
+		EED10D151BE53B3D0099A181 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EED10D141BE53B3D0099A181 /* Assets.xcassets */; };
+		EED10D181BE53B3D0099A181 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EED10D161BE53B3D0099A181 /* MainMenu.xib */; };
+		EED10D1E1BE53BD00099A181 /* IdeaCommandReceiver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE2673201BE438F800EC92D6 /* IdeaCommandReceiver.cpp */; };
+		EED10D1F1BE53BD00099A181 /* SpaceCommandReceiver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE9784C01BDB2CF100CD1F54 /* SpaceCommandReceiver.cpp */; };
+		EED10D201BE53BD00099A181 /* UserCommandReceiver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE2673281BE4503800EC92D6 /* UserCommandReceiver.cpp */; };
+		EED10D211BE53BD00099A181 /* Channel.mm in Sources */ = {isa = PBXBuildFile; fileRef = EE2673341BE52B7200EC92D6 /* Channel.mm */; };
+		EED10D221BE53BD00099A181 /* ModelMediator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE2673241BE43B8200EC92D6 /* ModelMediator.cpp */; };
+		EED10D231BE53BD00099A181 /* SyncClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE2673371BE52D8E00EC92D6 /* SyncClient.cpp */; };
+		EED10D2E1BE53FC60099A181 /* View.mm in Sources */ = {isa = PBXBuildFile; fileRef = EED10D2D1BE53FC60099A181 /* View.mm */; };
+		EED10D361BE5AF830099A181 /* ParseCommandJSON.mm in Sources */ = {isa = PBXBuildFile; fileRef = EED10D341BE5AF830099A181 /* ParseCommandJSON.mm */; };
+		EED10D391BE6DA2C0099A181 /* CommandReceiverFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EED10D371BE6DA2C0099A181 /* CommandReceiverFactory.cpp */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		EE9784B41BDB212900CD1F54 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3C3123E61BDD1DEF007B642C /* Command.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Command.h; path = Lib/Command.h; sourceTree = "<group>"; };
 		3C3123E71BDD1DEF007B642C /* CommandReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommandReceiver.h; path = Lib/CommandReceiver.h; sourceTree = "<group>"; };
 		3C3123E81BDD1DEF007B642C /* CommandReceiverImpl.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = CommandReceiverImpl.hpp; path = Lib/CommandReceiverImpl.hpp; sourceTree = "<group>"; };
+		56B3318A1F8C1B800C9D9546 /* libPods-Test.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Test.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7323ACF442A7AEC86EA0BDE9 /* Pods-TestGUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestGUI.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestGUI/Pods-TestGUI.release.xcconfig"; sourceTree = "<group>"; };
+		8DE9F8AEAB71E7E878F03A1C /* Pods-Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test.release.xcconfig"; path = "Pods/Target Support Files/Pods-Test/Pods-Test.release.xcconfig"; sourceTree = "<group>"; };
+		A5E020FF8CEA4D37D0A9E82C /* Pods-TestGUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestGUI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestGUI/Pods-TestGUI.debug.xcconfig"; sourceTree = "<group>"; };
+		CB5495AE60313500F2F2523F /* libPods-TestGUI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestGUI.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D15B1EEB769E7219940432CC /* Pods-Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Test/Pods-Test.debug.xcconfig"; sourceTree = "<group>"; };
 		EE1DFA581BDC5509005C452F /* Commands.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Commands.h; sourceTree = "<group>"; };
-		EE9784B61BDB212A00CD1F54 /* Test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Test; sourceTree = BUILT_PRODUCTS_DIR; };
-		EE9784B91BDB212A00CD1F54 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		EE9784C01BDB2CF100CD1F54 /* CommandReceiverA.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CommandReceiverA.cpp; sourceTree = "<group>"; };
-		EE9784C21BDB2CF700CD1F54 /* CommandReceiverA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommandReceiverA.h; sourceTree = "<group>"; };
+		EE26731E1BE438DD00EC92D6 /* IdeaCommandReceiver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IdeaCommandReceiver.h; sourceTree = "<group>"; };
+		EE2673201BE438F800EC92D6 /* IdeaCommandReceiver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IdeaCommandReceiver.cpp; sourceTree = "<group>"; };
+		EE2673241BE43B8200EC92D6 /* ModelMediator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ModelMediator.cpp; sourceTree = "<group>"; };
+		EE2673251BE43B8200EC92D6 /* ModelMediator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelMediator.h; sourceTree = "<group>"; };
+		EE2673271BE43D2500EC92D6 /* ModelCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelCommand.h; sourceTree = "<group>"; };
+		EE2673281BE4503800EC92D6 /* UserCommandReceiver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UserCommandReceiver.cpp; sourceTree = "<group>"; };
+		EE2673291BE4503800EC92D6 /* UserCommandReceiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCommandReceiver.h; sourceTree = "<group>"; };
+		EE26732E1BE4551500EC92D6 /* Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		EE26732F1BE463B900EC92D6 /* ModelRegistry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelRegistry.h; sourceTree = "<group>"; };
+		EE2673301BE4663100EC92D6 /* ModelObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelObject.h; sourceTree = "<group>"; };
+		EE2673341BE52B7200EC92D6 /* Channel.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Channel.mm; sourceTree = "<group>"; };
+		EE2673351BE52B7200EC92D6 /* Channel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Channel.h; sourceTree = "<group>"; };
+		EE2673371BE52D8E00EC92D6 /* SyncClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SyncClient.cpp; sourceTree = "<group>"; };
+		EE2673381BE52D8E00EC92D6 /* SyncClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyncClient.h; sourceTree = "<group>"; };
+		EE9784C01BDB2CF100CD1F54 /* SpaceCommandReceiver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpaceCommandReceiver.cpp; sourceTree = "<group>"; };
+		EE9784C21BDB2CF700CD1F54 /* SpaceCommandReceiver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpaceCommandReceiver.h; sourceTree = "<group>"; };
+		EED10D0C1BE53B3D0099A181 /* TestGUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestGUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EED10D0E1BE53B3D0099A181 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EED10D0F1BE53B3D0099A181 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
+		EED10D121BE53B3D0099A181 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EED10D141BE53B3D0099A181 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EED10D171BE53B3D0099A181 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		EED10D191BE53B3D0099A181 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EED10D2C1BE53FC60099A181 /* View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = View.h; sourceTree = "<group>"; };
+		EED10D2D1BE53FC60099A181 /* View.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = View.mm; sourceTree = "<group>"; };
+		EED10D331BE5AD420099A181 /* ParseCommandJSON.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParseCommandJSON.h; sourceTree = "<group>"; };
+		EED10D341BE5AF830099A181 /* ParseCommandJSON.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ParseCommandJSON.mm; sourceTree = "<group>"; };
+		EED10D371BE6DA2C0099A181 /* CommandReceiverFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CommandReceiverFactory.cpp; sourceTree = "<group>"; };
+		EED10D381BE6DA2C0099A181 /* CommandReceiverFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandReceiverFactory.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		EE9784B31BDB212900CD1F54 /* Frameworks */ = {
+		EED10D091BE53B3D0099A181 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0732AE1019462A90ED8563DD /* libPods-TestGUI.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3C3123E51BDD1DD6007B642C /* Lib */ = {
+		3C3123E51BDD1DD6007B642C /* CommandFramework */ = {
 			isa = PBXGroup;
 			children = (
 				3C3123E61BDD1DEF007B642C /* Command.h */,
 				3C3123E71BDD1DEF007B642C /* CommandReceiver.h */,
 				3C3123E81BDD1DEF007B642C /* CommandReceiverImpl.hpp */,
 			);
-			name = Lib;
+			name = CommandFramework;
 			sourceTree = "<group>";
 		};
-		EE1DFA5A1BDC5536005C452F /* Sample */ = {
+		98C6DEE0064FE86D946ED8CF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				EE9784C01BDB2CF100CD1F54 /* CommandReceiverA.cpp */,
-				EE9784C21BDB2CF700CD1F54 /* CommandReceiverA.h */,
-				EE1DFA581BDC5509005C452F /* Commands.h */,
+				D15B1EEB769E7219940432CC /* Pods-Test.debug.xcconfig */,
+				8DE9F8AEAB71E7E878F03A1C /* Pods-Test.release.xcconfig */,
+				A5E020FF8CEA4D37D0A9E82C /* Pods-TestGUI.debug.xcconfig */,
+				7323ACF442A7AEC86EA0BDE9 /* Pods-TestGUI.release.xcconfig */,
 			);
-			name = Sample;
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DB6D6581414458D8936A6F67 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				56B3318A1F8C1B800C9D9546 /* libPods-Test.a */,
+				CB5495AE60313500F2F2523F /* libPods-TestGUI.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EE1DFA5A1BDC5536005C452F /* DomainModel */ = {
+			isa = PBXGroup;
+			children = (
+				EE26732C1BE454DC00EC92D6 /* Commanding */,
+				EE26732D1BE454F800EC92D6 /* Model */,
+			);
+			name = DomainModel;
+			sourceTree = "<group>";
+		};
+		EE2673231BE43AD700EC92D6 /* SyncClient */ = {
+			isa = PBXGroup;
+			children = (
+				EE2673351BE52B7200EC92D6 /* Channel.h */,
+				EE2673341BE52B7200EC92D6 /* Channel.mm */,
+				EE2673271BE43D2500EC92D6 /* ModelCommand.h */,
+				EE2673241BE43B8200EC92D6 /* ModelMediator.cpp */,
+				EE2673251BE43B8200EC92D6 /* ModelMediator.h */,
+				EE2673371BE52D8E00EC92D6 /* SyncClient.cpp */,
+				EE2673381BE52D8E00EC92D6 /* SyncClient.h */,
+			);
+			name = SyncClient;
+			sourceTree = "<group>";
+		};
+		EE26732C1BE454DC00EC92D6 /* Commanding */ = {
+			isa = PBXGroup;
+			children = (
+				EED10D3A1BE6DA440099A181 /* CommandReceiver */,
+				EE1DFA581BDC5509005C452F /* Commands.h */,
+				EED10D331BE5AD420099A181 /* ParseCommandJSON.h */,
+				EED10D341BE5AF830099A181 /* ParseCommandJSON.mm */,
+			);
+			name = Commanding;
+			sourceTree = "<group>";
+		};
+		EE26732D1BE454F800EC92D6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EE26732E1BE4551500EC92D6 /* Model.h */,
+				EE2673301BE4663100EC92D6 /* ModelObject.h */,
+				EE26732F1BE463B900EC92D6 /* ModelRegistry.h */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		EE9784AD1BDB212900CD1F54 = {
 			isa = PBXGroup;
 			children = (
-				EE9784B81BDB212A00CD1F54 /* Test */,
+				DB6D6581414458D8936A6F67 /* Frameworks */,
+				98C6DEE0064FE86D946ED8CF /* Pods */,
 				EE9784B71BDB212A00CD1F54 /* Products */,
+				EE9784B81BDB212A00CD1F54 /* Test */,
+				EED10D0D1BE53B3D0099A181 /* TestGUI */,
 			);
 			sourceTree = "<group>";
 		};
 		EE9784B71BDB212A00CD1F54 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EE9784B61BDB212A00CD1F54 /* Test */,
+				EED10D0C1BE53B3D0099A181 /* TestGUI.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -84,32 +173,72 @@
 		EE9784B81BDB212A00CD1F54 /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				3C3123E51BDD1DD6007B642C /* Lib */,
-				EE9784B91BDB212A00CD1F54 /* main.cpp */,
-				EE1DFA5A1BDC5536005C452F /* Sample */,
+				3C3123E51BDD1DD6007B642C /* CommandFramework */,
+				EE1DFA5A1BDC5536005C452F /* DomainModel */,
+				EE2673231BE43AD700EC92D6 /* SyncClient */,
 			);
 			path = Test;
+			sourceTree = "<group>";
+		};
+		EED10D0D1BE53B3D0099A181 /* TestGUI */ = {
+			isa = PBXGroup;
+			children = (
+				EED10D0E1BE53B3D0099A181 /* AppDelegate.h */,
+				EED10D0F1BE53B3D0099A181 /* AppDelegate.mm */,
+				EED10D141BE53B3D0099A181 /* Assets.xcassets */,
+				EED10D191BE53B3D0099A181 /* Info.plist */,
+				EED10D161BE53B3D0099A181 /* MainMenu.xib */,
+				EED10D111BE53B3D0099A181 /* Supporting Files */,
+				EED10D2C1BE53FC60099A181 /* View.h */,
+				EED10D2D1BE53FC60099A181 /* View.mm */,
+			);
+			path = TestGUI;
+			sourceTree = "<group>";
+		};
+		EED10D111BE53B3D0099A181 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EED10D121BE53B3D0099A181 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EED10D3A1BE6DA440099A181 /* CommandReceiver */ = {
+			isa = PBXGroup;
+			children = (
+				EED10D371BE6DA2C0099A181 /* CommandReceiverFactory.cpp */,
+				EED10D381BE6DA2C0099A181 /* CommandReceiverFactory.h */,
+				EE2673201BE438F800EC92D6 /* IdeaCommandReceiver.cpp */,
+				EE26731E1BE438DD00EC92D6 /* IdeaCommandReceiver.h */,
+				EE9784C01BDB2CF100CD1F54 /* SpaceCommandReceiver.cpp */,
+				EE9784C21BDB2CF700CD1F54 /* SpaceCommandReceiver.h */,
+				EE2673281BE4503800EC92D6 /* UserCommandReceiver.cpp */,
+				EE2673291BE4503800EC92D6 /* UserCommandReceiver.h */,
+			);
+			name = CommandReceiver;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EE9784B51BDB212900CD1F54 /* Test */ = {
+		EED10D0B1BE53B3D0099A181 /* TestGUI */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EE9784BD1BDB212A00CD1F54 /* Build configuration list for PBXNativeTarget "Test" */;
+			buildConfigurationList = EED10D1A1BE53B3D0099A181 /* Build configuration list for PBXNativeTarget "TestGUI" */;
 			buildPhases = (
-				EE9784B21BDB212900CD1F54 /* Sources */,
-				EE9784B31BDB212900CD1F54 /* Frameworks */,
-				EE9784B41BDB212900CD1F54 /* CopyFiles */,
+				6FA2BB23CC685CE3530F9971 /* Check Pods Manifest.lock */,
+				EED10D081BE53B3D0099A181 /* Sources */,
+				EED10D091BE53B3D0099A181 /* Frameworks */,
+				EED10D0A1BE53B3D0099A181 /* Resources */,
+				7E3531517D78858A004B5B92 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Test;
-			productName = Test;
-			productReference = EE9784B61BDB212A00CD1F54 /* Test */;
-			productType = "com.apple.product-type.tool";
+			name = TestGUI;
+			productName = TestGUI;
+			productReference = EED10D0C1BE53B3D0099A181 /* TestGUI.app */;
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
@@ -120,8 +249,8 @@
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "Julian Walker";
 				TargetAttributes = {
-					EE9784B51BDB212900CD1F54 = {
-						CreatedOnToolsVersion = 6.4;
+					EED10D0B1BE53B3D0099A181 = {
+						CreatedOnToolsVersion = 7.1;
 					};
 				};
 			};
@@ -131,28 +260,94 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = EE9784AD1BDB212900CD1F54;
 			productRefGroup = EE9784B71BDB212A00CD1F54 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EE9784B51BDB212900CD1F54 /* Test */,
+				EED10D0B1BE53B3D0099A181 /* TestGUI */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		EED10D0A1BE53B3D0099A181 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EED10D151BE53B3D0099A181 /* Assets.xcassets in Resources */,
+				EED10D181BE53B3D0099A181 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6FA2BB23CC685CE3530F9971 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7E3531517D78858A004B5B92 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestGUI/Pods-TestGUI-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		EE9784B21BDB212900CD1F54 /* Sources */ = {
+		EED10D081BE53B3D0099A181 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE9784BA1BDB212A00CD1F54 /* main.cpp in Sources */,
-				EE9784C11BDB2CF100CD1F54 /* CommandReceiverA.cpp in Sources */,
+				EED10D101BE53B3D0099A181 /* AppDelegate.mm in Sources */,
+				EED10D211BE53BD00099A181 /* Channel.mm in Sources */,
+				EED10D391BE6DA2C0099A181 /* CommandReceiverFactory.cpp in Sources */,
+				EED10D361BE5AF830099A181 /* ParseCommandJSON.mm in Sources */,
+				EED10D1E1BE53BD00099A181 /* IdeaCommandReceiver.cpp in Sources */,
+				EED10D131BE53B3D0099A181 /* main.m in Sources */,
+				EED10D221BE53BD00099A181 /* ModelMediator.cpp in Sources */,
+				EED10D1F1BE53BD00099A181 /* SpaceCommandReceiver.cpp in Sources */,
+				EED10D231BE53BD00099A181 /* SyncClient.cpp in Sources */,
+				EED10D201BE53BD00099A181 /* UserCommandReceiver.cpp in Sources */,
+				EED10D2E1BE53FC60099A181 /* View.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EED10D161BE53B3D0099A181 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EED10D171BE53B3D0099A181 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		EE9784BB1BDB212A00CD1F54 /* Debug */ = {
@@ -232,18 +427,33 @@
 			};
 			name = Release;
 		};
-		EE9784BE1BDB212A00CD1F54 /* Debug */ = {
+		EED10D1B1BE53B3D0099A181 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5E020FF8CEA4D37D0A9E82C /* Pods-TestGUI.debug.xcconfig */;
 			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_TESTABILITY = YES;
+				INFOPLIST_FILE = TestGUI/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fiftythree.TestGUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		EE9784BF1BDB212A00CD1F54 /* Release */ = {
+		EED10D1C1BE53B3D0099A181 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7323ACF442A7AEC86EA0BDE9 /* Pods-TestGUI.release.xcconfig */;
 			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = TestGUI/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fiftythree.TestGUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -260,11 +470,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EE9784BD1BDB212A00CD1F54 /* Build configuration list for PBXNativeTarget "Test" */ = {
+		EED10D1A1BE53B3D0099A181 /* Build configuration list for PBXNativeTarget "TestGUI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EE9784BE1BDB212A00CD1F54 /* Debug */,
-				EE9784BF1BDB212A00CD1F54 /* Release */,
+				EED10D1B1BE53B3D0099A181 /* Debug */,
+				EED10D1C1BE53B3D0099A181 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

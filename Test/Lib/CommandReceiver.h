@@ -56,17 +56,17 @@ template<typename DerivedT>
 struct CommandReceiverT
 {
     template<typename CommandT>
-    void Execute(const std::shared_ptr<CommandT> &command)
+    bool Execute(const std::shared_ptr<CommandT> &command)
     {
         static_assert(CanExecuteCommand<CommandT, typename DerivedT::Commands>::result::value,
                       "Receiver is not spec'd to receive command");
-        _Execute(command);
+        return _Execute(command);
     }
     
 private:
     
     template<typename CommandT>
-    void _Execute(const std::shared_ptr<CommandT> &);
+    bool _Execute(const std::shared_ptr<CommandT> &);
 };
 
 // This class can be used to abstract away a given command receiver so that
@@ -74,18 +74,29 @@ private:
 class OpaqueCommandReceiver
 {
 public:
+    
+    OpaqueCommandReceiver() {}
+    
     template<class ReceiverT>
     OpaqueCommandReceiver(const std::shared_ptr<ReceiverT> &receiver)
     {
         _Execute = [receiver](const std::shared_ptr<Command> &command) {
-            receiver->Execute(command);
+            return receiver->Execute(command);
         };
     }
     
-    void Execute(const std::shared_ptr<Command> &command)
+    bool IsInitialized() const
     {
-        _Execute(command);
+        return _Execute != nullptr;
+    }
+    
+    bool Execute(const std::shared_ptr<Command> &command)
+    {
+        if (_Execute) {
+            return _Execute(command);
+        }
+        return false;
     }
 private:
-    std::function<void(const std::shared_ptr<Command> &command)> _Execute;
+    std::function<bool(const std::shared_ptr<Command> &command)> _Execute;
 };
